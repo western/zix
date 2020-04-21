@@ -1,8 +1,6 @@
-# zix
-Zabbix api caller
+# :zap:ix
 
-# Synopsis
-Yet another zabbix perl api engine ;)
+Yet:smiling_imp: another zabbix perl:camel: api engine ;)
 
 # Examples
 
