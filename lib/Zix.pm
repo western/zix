@@ -17,7 +17,19 @@ use JSON::XS;
 use Term::ANSIColor;
 
 
-
+=head2 constructor
+    
+    my $z = new Zix(
+        home     => 'https://domain.tld/zabbix',
+        
+        user     => 'Admin',
+        password => '***password',
+        
+        #basic_user     => 'userlogin',
+        #basic_password => '***password',
+    );
+    
+=cut
 sub new{
     my $c = shift;
     my $class = ref $c || $c;
@@ -257,6 +269,18 @@ sub host_create {
     as example:
     
     $z->universal(
+        'application.get',
+        
+        hostids => 10107,
+    );
+    
+    $z->universal(
+        'item.get',
+        
+        hostid => 10114,
+    );
+    
+    $z->universal(
         'item.create',
         
         name         => $it.'['.$dev.']',
@@ -268,6 +292,32 @@ sub host_create {
         applications => [506],
         delay        => 30,
         delta        => 1, # 1 - Delta, speed per second; # 2 - Delta, simple change.
+    );
+    
+    $z->universal(
+        'host.create',
+        
+        host => 'host name 1',
+        groups => [
+            {
+                groupid => 2,
+            }
+        ],
+        interfaces => [
+            {
+                type => 1,
+                main => 1,
+                useip => 1,
+                ip => 'x.x.x.x',
+                port => 10050,
+                dns => '',
+            }
+        ],
+        templates => [
+            {
+                templateid => 10001,
+            }
+        ],
     );
     
 =cut
