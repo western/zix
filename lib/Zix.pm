@@ -165,7 +165,6 @@ sub is_auth {
             id   => 1,
             auth => undef,
         }),
-        @_,
     );
     
     
@@ -194,7 +193,6 @@ sub apiinfo_version {
             id   => 1,
             auth => undef,
         }),
-        @_,
     );
 }
 
@@ -232,7 +230,6 @@ sub host_get {
             id   => 1,
             auth => $self->{auth},
         }),
-        @_,
     );
 }
 
@@ -257,7 +254,6 @@ sub host_create {
             id   => 1,
             auth => $self->{auth},
         }),
-        @_,
     );
 }
 
@@ -338,7 +334,6 @@ sub universal {
             id   => 1,
             auth => $self->{auth},
         }),
-        @_,
     );
     
     warn 'error: '.Dumper($res->{error}) if( $res && $res->{error} );
