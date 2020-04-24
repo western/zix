@@ -39,7 +39,10 @@ if( $z->is_auth ){
     
     # get all hosts
     my $hosts = $z->host_get;
-    warn Dumper($hosts);
+    for my $h ( @$hosts ){
+        warn 'hostid: '.$h->hostid;
+        warn 'name: '.$h->host;
+    }
     
     # get one host object
     my $h = $z->host_get('media');
